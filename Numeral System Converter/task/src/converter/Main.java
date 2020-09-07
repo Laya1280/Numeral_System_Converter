@@ -1,22 +1,11 @@
 package converter;
-
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int decimalNumber = 10;
-        System.out.print(decimalNumber + " is equal to 0b" + convertToBinary(decimalNumber));
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        String str = Number.decimalToOctalString(number);
+        System.out.println(str.charAt(str.length()-1));
     }
-    public static String convertToBinary( int decimalNumber) {
-        String str = "";
-        if(decimalNumber == 0){
-            str = "0";
-        }
-        else{
-            while (decimalNumber > 0){
-                str = decimalNumber % 2 + str;
-                decimalNumber /= 2;
-            }
-        }
-        return str;
-    }
+
 }
